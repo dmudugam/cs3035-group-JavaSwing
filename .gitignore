@@ -35,7 +35,8 @@ build/
 .vscode/
 
 ### Java ###
-.class
+src/Application.class
+src/TicTacToe.class
 
 ### Mac OS ###
 .DS_Store
