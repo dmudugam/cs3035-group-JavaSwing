@@ -22,10 +22,7 @@ TypeScript or one from another class you have taken (e.g., Unity, Android, etc).
 1. Clone the repository and install dependencies if they are not already installed. Then, run the Java application.
 
 ## Dependencies
-- JavaFX Controls
-- JavaFX FXML
-- JUnit Jupiter API
-- JUnit Jupiter Engine
+- JavaSwing
 
 ## Authors
 
