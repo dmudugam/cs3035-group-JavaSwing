@@ -1,7 +1,7 @@
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.*;
 
 public class Application extends JFrame implements ActionListener {
     private JButton helloButton;
@@ -28,7 +28,7 @@ public class Application extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == helloButton) {
-            JOptionPane.showMessageDialog(this, "Hello World");
+            new HelloWorld();
         } else if (e.getSource() == ticTacToeButton) {
             new TicTacToe();
         }
@@ -38,6 +38,13 @@ public class Application extends JFrame implements ActionListener {
         new Application();
     }
 }
+/* Used only for screenshots in the powerpoint for simplicity.
+public class Application{
+    public static void main(String[] args) {
+        new HelloWorld();
+    }
+}
+*/
 
 class TicTacToe extends JFrame implements ActionListener {
     private JButton[][] buttons = new JButton[3][3];
@@ -140,3 +147,28 @@ class TicTacToe extends JFrame implements ActionListener {
         playerX = true;
     }
 }
+
+class HelloWorld extends JFrame {
+    JLabel greeting = new JLabel("Hello World!");
+    JButton changeGreeting = new JButton("change greeting");
+    String[] options = {"Hello", "Good Morning,", "Hi There,"};
+    JComboBox dropdown = new JComboBox(options);
+
+    public HelloWorld(){
+        setTitle("Hello World");
+        setSize(400, 150);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setLayout(new FlowLayout());
+
+        changeGreeting.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                greeting.setText(options[dropdown.getSelectedIndex()] + " World!");
+            }
+        });
+
+        add(greeting);
+        add(changeGreeting);
+        add(dropdown);
+        setVisible(true);
+    };
+};
